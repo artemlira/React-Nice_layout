@@ -1,7 +1,209 @@
-@use '../../styles/variables.scss' as v;
-@use '../../styles/mixins.scss' as m;
-@use '../../styles/functions.scss' as f;
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
+@use "../../styles/functions.scss" as f;
 
-.footer {}
+.footer {
+  min-height: 330px;
+  background-color: v.$darkPurple;
+  padding-block: 39px 30px;
+}
 
-.container {}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  &:not(:last-child) {
+    margin-bottom: 92px;
+
+    @include m.phone {
+      margin-bottom: 49px;
+    }
+  }
+
+  @include m.tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 80px;
+  }
+}
+
+.logo {
+  width: 90px;
+  height: 60px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: v.$white;
+  }
+
+  &:hover {
+    transform: scale(1.3);
+    svg * {
+      fill: v.$yellow;
+    }
+  }
+}
+
+.menu {
+  display: flex;
+  @include m.adaptiv-value("gap", 115, 0, 1);
+  align-items: center;
+
+  @include m.tablet {
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+  }
+}
+
+.navList {
+  display: flex;
+  @include m.adaptiv-value("gap", 105, 0, 1);
+  @include m.phone {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.navItem {
+  a {
+    color: v.$white;
+    font-size: 14px;
+    line-height: f.ratio(14, 21);
+    font-weight: 400;
+    transition: 0.3s ease;
+  }
+  &:hover {
+    a {
+      color: v.$yellow;
+    }
+  }
+}
+
+.icons {
+  display: flex;
+  gap: 20px;
+
+  svg {
+    cursor: pointer;
+    fill: v.$white;
+    transition: 0.3s ease;
+    &:hover {
+      fill: v.$yellow;
+      transform: scale(1.3);
+    }
+  }
+}
+
+.form {
+  display: flex;
+  color: v.$white;
+  font-size: 14px;
+  line-height: f.ratio(14, 21);
+  align-items: center;
+  &:not(:last-child) {
+    margin-bottom: 49px;
+    @include m.tablet {
+      margin-bottom: 71px;
+    }
+  }
+
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "text text" "input btn";
+  }
+}
+.formText {
+  grid-area: text;
+  &:not(:last-child) {
+    margin-right: 26px;
+    @include m.tablet {
+      margin-bottom: 26px;
+      margin-right: 0;
+    }
+
+    @include m.phone {
+      margin-bottom: 16px;
+    }
+  }
+}
+.input {
+  padding: 12px 16px;
+  border: 1px solid v.$white;
+  border-radius: 6px 0px 0px 6px;
+  background-color: transparent;
+  min-width: 243px;
+  grid-area: input;
+  color: v.$white;
+  @include m.tablet {
+    min-width: 140px;
+    padding: 12px;
+  }
+
+  &::placeholder {
+    color: v.$white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn {
+  background-color: v.$white;
+  border-radius: 0px 6px 6px 0px;
+  padding: 10px 29px;
+  color: v.$darkPurple;
+  transition: 0.3s ease;
+  grid-area: btn;
+  &:hover {
+    background-color: v.$yellow;
+  }
+
+  @include m.phone {
+    padding: 10px 16px;
+  }
+}
+.active {
+  width: 365px;
+  border-radius: 6px 6px 6px 6px;
+  background-color: v.$yellow;
+  padding: 10px 29px;
+
+  @include m.tablet {
+    width: 100%;
+  }
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #ae97cb;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+    @include m.tablet {
+      margin-bottom: 42px;
+    }
+  }
+}
+
+.text {
+  font-size: 12px;
+  line-height: f.ratio(12, 18);
+  text-align: center;
+  color: v.$white;
+  @include m.phone {
+    margin-inline: auto;
+    max-width: 193px;
+  }
+}

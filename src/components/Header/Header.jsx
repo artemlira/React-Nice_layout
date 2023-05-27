@@ -47,9 +47,9 @@ function Header() {
           exit="exit"
           className={styles.container}
         >
-          <div className={styles.logo}>
+          <a href="/" className={styles.logo}>
             <Logo />
-          </div>
+          </a>
           <div className={styles.menu}>
             {!openMenu ? (
               <Menu
