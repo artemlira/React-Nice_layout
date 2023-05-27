@@ -1,7 +1,150 @@
-@use '../../styles/variables.scss' as v;
-@use '../../styles/mixins.scss' as m;
-@use '../../styles/functions.scss' as f;
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
+@use "../../styles/functions.scss" as f;
 
-.hero {}
+.hero {
+  background-color: v.$darkPurple;
+  padding-block: 84px 60px;
+  margin-bottom: 97px;
+}
 
-.container {}
+.container {
+  display: flex;
+  @include m.laptop {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 62px;
+  }
+}
+
+.contant {
+  padding-inline: 123px 0;
+  flex: 0 1 60%;
+  @include m.laptop {
+    flex: 0 0 700px;
+    padding-inline: 0px;
+  }
+  @include m.tablet {
+    flex: 1 1 auto;
+  }
+}
+
+.img {
+  width: 285px;
+  flex: 0 1 38%;
+  position: relative;
+  background: url("../../assets/images/gradient-blur.png") center / cover
+    no-repeat;
+  @include m.laptop {
+    height: 300px;
+  }
+  @include m.netbook {
+    flex: 0 0 300px;
+  }
+}
+
+.man {
+  width: 285px;
+  height: 450px;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  @include m.phone {
+    height: 400px;
+    width: 250px;
+  }
+}
+
+.shape {
+  position: absolute;
+  width: 124px;
+  height: 124px;
+  top: -17px;
+  left: 20px;
+  @include m.phone {
+    width: 110px;
+    height: 110px;
+    top: -10px;
+    left: 22px;
+  }
+}
+
+.title {
+  font-size: 64px;
+  line-height: f.ratio(64, 88);
+  color: v.$white;
+  max-width: 577px;
+  font-weight: 800;
+  &:not(:last-child) {
+    margin-bottom: 11px;
+  }
+
+  @include m.phone {
+    font-size: 48px;
+    line-height: f.ratio(48, 66);
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+.text {
+  font-size: 18px;
+  line-height: f.ratio(18, 27);
+  color: v.$white;
+  max-width: 454px;
+  &:not(:last-child) {
+    margin-bottom: 26px;
+  }
+
+  @include m.phone {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  span {
+    color: v.$yellow;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+.buttons {
+  display: flex;
+  gap: 16px;
+  @include m.phone {
+    flex-direction: column;
+  }
+  button {
+    border-radius: 8px;
+    font-weight: 600;
+  }
+
+  button:nth-child(1) {
+    background-color: v.$yellow;
+    color: v.$darkPurple;
+    padding: 11px 54px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+    @include m.phone {
+      max-width: 190px;
+    }
+    &:hover {
+      background-color: v.$purple;
+      color: v.$white;
+      border: 1px solid v.$white;
+    }
+  }
+  button:nth-child(2) {
+    border: 1px solid v.$white;
+    color: v.$white;
+    padding: 11px 38px;
+    transition: 0.3s ease;
+    @include m.phone {
+      max-width: 210px;
+    }
+    &:hover {
+      background-color: v.$purple;
+      color: v.$white;
+    }
+  }
+}
