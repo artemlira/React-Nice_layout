@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Benefic from "./components/Benefic";
 import Contato from "./components/Contato";
+import Ajudamos from "./components/Ajudamos";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <main className="main">
         <Hero />
         <Benefic />
+        <Ajudamos />
         <Contato />
       </main>
       <Footer />

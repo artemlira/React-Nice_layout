@@ -1,0 +1,90 @@
+@use "../../styles/variables.scss" as v;
+@use "../../styles/mixins.scss" as m;
+@use "../../styles/functions.scss" as f;
+
+.ajudamos {
+  padding-block: 132px 86px;
+  background: url("../../assets/images/BurgerShapeBlur.png") top 50px right -180px /
+    350px 350px no-repeat;
+  @media screen and (max-width: 1400px) {
+    background: inherit;
+  }
+
+  @include m.phone {
+    padding-block: 44px 0px;
+  }
+}
+
+.container {
+  display: flex;
+  @include m.tablet {
+    flex-direction: column;
+  }
+}
+
+.content {
+  flex: 1 1 49%;
+}
+.label {
+  text-transform: uppercase;
+  color: v.$purple;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: f.ratio(36, 54);
+  color: v.$darkPurple;
+  max-width: 300px;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}
+.text {
+  max-width: 442px;
+  &:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  span {
+    font-weight: 700;
+    color: v.$purple;
+  }
+}
+.button {
+  border-radius: 8px;
+  background-color: v.$yellow;
+  padding: 11px 54px;
+  color: v.$darkPurple;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: v.$purple;
+    color: v.$white;
+    border: 1px solid v.$white;
+  }
+}
+.img {
+  flex: 1 1 49%;
+  background: url("../../assets/images/BurgerShape.png") top right / 187px 187px
+      no-repeat,
+    url("../../assets/images/BurgerShape.png") top 50px left / 65px 65px
+      no-repeat,
+    url("../../assets/images/BurgerShapeBlur.png") top 50% right -30px / 120px 120px
+      no-repeat,
+    url("../../assets/images/gradient-blur.png") center / contain no-repeat;
+  padding-left: 50px;
+
+  @include m.phone {
+    background: url("../../assets/images/BurgerShapeBlur.png") top -50px right -150px /
+        250px 250px no-repeat,
+      url("../../assets/images/BurgerShape.png") top 50px left / 65px 65px
+        no-repeat,
+      url("../../assets/images/BurgerShapeBlur.png") top 50% right -60px / 120px
+        120px no-repeat,
+      url("../../assets/images/gradient-blur.png") center / contain no-repeat;
+    padding-left: 50px;
+  }
+}
