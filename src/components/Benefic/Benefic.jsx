@@ -1,11 +1,17 @@
 import React, { forwardRef } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCube, Pagination } from "swiper";
 import Target from "../../assets/images/Target.png";
 import Ethereum from "../../assets/images/Ethereum.png";
 import CreditCard from "../../assets/images/CreditCard.png";
 import { ReactComponent as AddBtn } from "../../assets/icons/add.svg";
 import styles from "./benefic.module.scss";
+import "swiper/css";
+import "swiper/css/effect-cube";
+import "swiper/css/pagination";
+import "./slider.scss";
 
 const animation = {
   hidden: {
@@ -20,7 +26,6 @@ const animation = {
 };
 
 function Benefic() {
-
   const cards = [
     {
       img: Target,
@@ -41,6 +46,7 @@ function Benefic() {
       btn: AddBtn,
     },
   ];
+
   return (
     <section className={styles.benefic} id="fazemos">
       <div className="container">
@@ -74,6 +80,45 @@ function Benefic() {
               />
             ))}
           </motion.div>
+          <Swiper
+            effect="cube"
+            grabCursor
+            loop
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+            pagination
+            modules={[EffectCube, Pagination]}
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <Card
+                img={cards[0].img}
+                title={cards[0].title}
+                text={cards[0].text}
+                Btn={cards[0].btn}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                img={cards[1].img}
+                title={cards[1].title}
+                text={cards[1].text}
+                Btn={cards[1].btn}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Card
+                img={cards[2].img}
+                title={cards[2].title}
+                text={cards[2].text}
+                Btn={cards[2].btn}
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
       </div>
     </section>

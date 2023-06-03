@@ -6,9 +6,6 @@
   min-height: 525px;
 }
 
-.container {
-}
-
 .title {
   font-size: 24px;
   line-height: f.ratio(24, 36);
@@ -55,6 +52,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  @include m.phone {
+    display: none;
+  }
 }
 
 .cardWrapper {
@@ -66,6 +67,9 @@
   padding: 33px;
   @include m.netbook {
     margin-top: 100px;
+  }
+  @include m.phone {
+    height: 100%;
   }
 }
 

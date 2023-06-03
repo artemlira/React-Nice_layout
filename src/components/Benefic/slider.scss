@@ -1,0 +1,11 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins.scss" as m;
+@use "../../styles/functions.scss" as f;
+
+.mySwiper {
+  display: none;
+  @include m.phone {
+    display: block;
+    height: 100%;
+  }
+}
