@@ -8,8 +8,11 @@ import Ethereum from "../../assets/images/Ethereum.png";
 import CreditCard from "../../assets/images/CreditCard.png";
 import { ReactComponent as AddBtn } from "../../assets/icons/add.svg";
 import styles from "./benefic.module.scss";
+// eslint-disable-next-line import/no-unresolved
 import "swiper/css";
+// eslint-disable-next-line import/no-unresolved
 import "swiper/css/effect-cube";
+// eslint-disable-next-line import/no-unresolved
 import "swiper/css/pagination";
 import "./slider.scss";
 
